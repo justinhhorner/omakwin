@@ -1,0 +1,1 @@
+$PATH_INSTALL = "$env:LOCALAPPDATA\omakwin"
