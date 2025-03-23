@@ -1,6 +1,4 @@
 $ErrorActionPreference = "Stop"
-
-function DisplayLogo {
     
 $WIN_LOGO = '////////   ////////
 ////////   ////////
@@ -41,23 +39,21 @@ $OMAKWIN_LOGO='________                  __           .__
     }
 
     Write-Output "`n"
-}
 
-
-DisplayLogo
 Write-Host "Omakwin is for fresh Windows 11 installations only!"
 Write-Host "Elevated privileges required."
 $CONTINUE_INPUT = Read-Host -Prompt "`r`nBegin installation? ([Y]es or abort with CTRL+C)"
 
 if ($CONTINUE_INPUT -eq "Y") {
     Write-Host "Installing Git..."
-    # TODO: Install Git via winget
+    winget install -e Git.Git --accept-source-agreements --accept-package-agreements
 
     Write-Host "Cloning Omakwin..."
-    #TODO: Clone Omakwin to LOCALAPPDATA\omakwin
+    Remove-Item $env:LOCALAPPDATA\omakwin -Force -Recurse -ErrorAction Ignore
+    git clone https://github.com/justinhhorner/omakwin.git $env:LOCALAPPDATA\omakwin
 
     Write-Host "Installation starting..."
-    # TODO: Invoke install.ps1 from within LOCALAPPDATA\omakwin
+    . $env:LOCALAPPDATA\omakwin\install.ps1
 
 } else {
     Write-Host "Installation cancelled"
