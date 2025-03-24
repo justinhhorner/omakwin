@@ -50,8 +50,16 @@ Dev Environments:
 - [ ] Game Boy
   - [ ] GBStudio 
 
+Themes:
+- [ ] Gruvbox
+    - [ ] Rider [(Plugin by Lonre Wang](https://plugins.jetbrains.com/plugin/20558-gruvbox--theme/reviews))
+    - [ ] VS Code [Extension by jdinhlife](https://marketplace.visualstudio.com/items?itemName=jdinhlife.gruvbox)]
+    - [ ] Neovim (via Lazyvim)
+
+
 Terminal:  
-- [X] Git
+- [X] Git  
+- [X] Gun  
 - [ ] Neovim  
 - [ ] Lazyvim  
 - [ ] Lazygit  
