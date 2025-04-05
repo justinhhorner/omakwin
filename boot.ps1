@@ -45,7 +45,7 @@ $CONTINUE_INPUT = Read-Host -Prompt "`r`nBegin installation? ([Y]es or abort wit
 
 if ($CONTINUE_INPUT -eq "Y") {
     Write-Host "Installing Git..."
-    winget install -e Git.Git --accept-source-agreements --accept-package-agreements
+    #winget install -e Git.Git --accept-source-agreements --accept-package-agreements
 
     Write-Host "Cloning Omakwin..."
     Remove-Item $env:LOCALAPPDATA\omakwin -Force -Recurse -ErrorAction Ignore

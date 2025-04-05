@@ -1,7 +1,7 @@
 $REG_SCREEN_SAVE_TIMEOUT_PATH = "HKCU:\Control Panel\Desktop"
 $REG_SCREEN_SAVER_IS_SECURE_PATH = "HKCU:\Software\Policies\Microsoft\Windows\Control Panel\Desktop"
 
-# Save the current screen save timeout and is secure values to use during revert
+# Save the current screen save timeout and is secure values to use during revert. The keys could be missing.
 $ErrorActionPreference="SilentlyContinue"
 $CURRENT_SCREEN_SAVE_TIMEOUT = Get-ItemPropertyValue -Path $REG_SCREEN_SAVE_TIMEOUT_PATH -Name "ScreenSaveTimeOut"
 $CURRENT_SCREEN_SAVER_IS_SECURE = Get-ItemPropertyValue -Path $REG_SCREEN_SAVER_IS_SECURE_PATH -Name "ScreenSaverIsSecure"

@@ -5,6 +5,8 @@ $GUM_PATH="gum_${GUM_VERSION}_Windows_x86_64"
 
 if (Test-Path -Path $TMP_PATH\gum.exe) {
     return
+} else {
+    New-Item -ItemType Directory -Path $TMP_PATH
 }
 
 Invoke-WebRequest -Uri "https://github.com/charmbracelet/gum/releases/download/v${GUM_VERSION}/${GUM_PATH}.zip" -OutFile "$TMP_PATH\gum.zip"

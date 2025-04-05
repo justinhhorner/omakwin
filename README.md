@@ -19,15 +19,17 @@ Omakwin configures Windows 11 to get out of your way without the need to write y
 
 ## Installations
 Optional:  
-- [ ] Spotify  
-- [ ] 1Password  
-- [ ] Discord  
-- [ ] ShareX  
-- [ ] Brave  
-- [ ] Google Chrome  
-- [ ] GOG Galaxy  
-- [ ] Battle.net
-- [ ] ...
+- [x] Spotify  
+- [x] 1Password  
+- [x] Discord  
+- [x] ShareX  
+- [x] Brave  
+- [x] Google Chrome  
+- [x] GOG Galaxy  
+- [x] Battle.net
+- [x] Visual Studio Code
+- [ ] Visual Studio Community
+- [ ] JetBrains Rider
 
 Dev Environments:  
 - [ ] Unreal Engine  
@@ -59,7 +61,7 @@ Themes:
 
 Terminal:  
 - [X] Git  
-- [X] Gun  
+- [X] Gum  
 - [ ] Neovim  
 - [ ] Lazyvim  
 - [ ] Lazygit  
