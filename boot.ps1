@@ -23,7 +23,6 @@ if ($CONTINUE_INPUT -eq "Y") {
    
     Write-Host "Downloading Git..."
     $GIT_VERSION = "2.49.0"
-    $OMAKWIN_REPO_URL = "https://github.com/justinhhorner/omakwin.git"
     $GIT_INSTALLER_URL = "https://github.com/git-for-windows/git/releases/latest/download/Git-${GIT_VERSION}-64-bit.exe"
     $GIT_INSTALLER_PATH = "${TMP_PATH}\git-installer.exe"
     if (Test-Path -Path $GIT_INSTALLER_PATH)
