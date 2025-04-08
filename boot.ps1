@@ -46,6 +46,9 @@ if ($CONTINUE_INPUT -eq "Y") {
     Remove-Item $env:LOCALAPPDATA\omakwin -Force -Recurse -ErrorAction Ignore
     git clone https://github.com/justinhhorner/omakwin.git $env:LOCALAPPDATA\omakwin
 
+    Write-Host "Removing temp files..."
+    Remove-Item "${TMP_PATH}\git-installer.exe" -Force -ErrorAction Ignore
+
     Write-Host "Installation starting..."
     . $env:LOCALAPPDATA\omakwin\install.ps1
 
