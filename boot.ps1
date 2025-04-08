@@ -1,51 +1,46 @@
+# Exit immediately if a command exits with a non-zero status
 $ErrorActionPreference = "Stop"
     
-$WIN_LOGO = '////////   ////////
-////////   ////////
-////////   ////////
-                  
-////////   ////////
-////////   ////////
-////////   ////////'
-
-$OMAKWIN_LOGO='________                  __           .__        
-\_____  \   _____ _____  |  | ___  _  _|__| ____  
- /   |   \ /     \\__  \ |  |/ | \/ \/ /  |/    \ 
+$OMAKWIN_LOGO='________                  __           .__            ////////   //////// 
+\_____  \   _____ _____  |  | ___  _  _|__| ____      ////////   ////////  
+ /   |   \ /     \\__  \ |  |/ | \/ \/ /  |/    \     ////////   ////////
 /    |    \  Y Y  \/ __ \|    < \     /|  |   |  \
-\_______  /__|_|  (____  /__|_ \ \/\_/ |__|___|  /
-        \/      \/     \/     \/               \/ 
-                Peak Windows for Game Programmers'
+\_______  /__|_|  (____  /__|_ \ \/\_/ |__|___|  /    ////////   ////////
+        \/      \/     \/     \/               \/     ////////   ////////
+                Peak Windows for Game Programmers     ////////   ////////'
 
-$LOGO_COLORS = @(
-"DarkBlue",
-"DarkBlue",
-"Blue",
-"Blue",
-"Blue",
-"DarkBlue",
-"White"
-)
-
-$WIN_LOGO = $WIN_LOGO -Split "`n"
-$OMAKWIN_LOGO = $OMAKWIN_LOGO -Split "`n"
-
-for ($LINE_INDEX = 0; $LINE_INDEX -lt $OMAKWIN_LOGO.Length; $LINE_INDEX++) {
-    $COLOR = $LOGO_COLORS[$LINE_INDEX]
-    Write-Host -ForegroundColor $COLOR $OMAKWIN_LOGO[$LINE_INDEX]
-
-    $WIN_LOGO_DISTANCE = ("`t    " * 6) -Join ""
-    Write-Host -NoNewline $WIN_LOGO_DISTANCE
-    Write-Host -NoNewline -ForegroundColor Blue $WIN_LOGO[$LINE_INDEX]
-}
-Write-Output "`n"
-
+Write-Output "$OMAKWIN_LOGO`n"
 Write-Host "Omakwin is for fresh Windows 11 installations only!"
 Write-Host "Elevated privileges required."
-$CONTINUE_INPUT = Read-Host -Prompt "`r`nBegin installation? ([Y]es or abort with CTRL+C)"
 
+$CONTINUE_INPUT = Read-Host -Prompt "`r`nBegin installation? ([Y]es or abort with CTRL+C)..."
 if ($CONTINUE_INPUT -eq "Y") {
+    Write-Host "Creating temp directory..."
+    $TMP_PATH = "$env:TMP\omakwin"
+    if (!(Test-Path -Path $TMP_PATH)) {
+        New-Item -ItemType Directory -Path $TMP_PATH
+    }
+   
+    Write-Host "Downloading Git..."
+    $GIT_VERSION = "2.49.0"
+    $OMAKWIN_REPO_URL = "https://github.com/justinhhorner/omakwin.git"
+    $GIT_INSTALLER_URL = "https://github.com/git-for-windows/git/releases/latest/download/Git-${GIT_VERSION}-64-bit.exe"
+    $GIT_INSTALLER_PATH = "${TMP_PATH}\git-installer.exe"
+    if (Test-Path -Path $GIT_INSTALLER_PATH)
+    {
+        Write-Host "Git installer found. Skipping download."
+    } 
+    else 
+    {
+        Invoke-WebRequest -Uri $GIT_INSTALLER_URL -OutFile $GIT_INSTALLER_PATH
+    }
+
+
     Write-Host "Installing Git..."
-    #winget install -e Git.Git --accept-source-agreements --accept-package-agreements
+    Start-Process -FilePath $GIT_INSTALLER_PATH -ArgumentList "/VERYSILENT", "/NORESTART", "/SUPPRESSMSGBOXES" -Wait
+
+    Write-Host "Adding Git to Path..."
+    $env:PATH += ";C:\Program Files\Git\cmd"
 
     Write-Host "Cloning Omakwin..."
     Remove-Item $env:LOCALAPPDATA\omakwin -Force -Recurse -ErrorAction Ignore
