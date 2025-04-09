@@ -28,7 +28,7 @@ Optional:
 - [x] GOG Galaxy  
 - [x] Battle.net
 - [x] Visual Studio Code
-- [ ] Everything (by voidtools)
+- [x] Everything (by voidtools)
 - [ ] Visual Studio Community
 - [ ] JetBrains Rider
 
