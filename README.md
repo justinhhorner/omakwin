@@ -32,6 +32,10 @@ Optional:
 - [ ] Visual Studio Community
 - [ ] JetBrains Rider
 
+## Built-in:
+- [ ] PowerToys
+- [ ] Steam
+
 Dev Environments:  
 - [ ] Unreal Engine  
   - [ ] Epic Games Installer    
