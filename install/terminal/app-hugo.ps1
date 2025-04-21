@@ -1,0 +1,1 @@
+winget install Hugo.Hugo.Extended --accept-source-agreements --accept-package-agreements

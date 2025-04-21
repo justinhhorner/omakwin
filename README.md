@@ -31,7 +31,7 @@ Optional:
 - [x] Everything (by voidtools)
 - [ ] Visual Studio Community
 - [ ] JetBrains Rider
-- [ ] Hugo
+- [x] Hugo
 
 ## Built-in:
 - [ ] PowerToys
