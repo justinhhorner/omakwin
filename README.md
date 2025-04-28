@@ -34,14 +34,15 @@ Optional:
 - [x] Hugo
 
 ## Built-in:
+- [ ] Steam  
 - [ ] PowerToys
-- [ ] Steam
+- [ ] WinJump
 
 Dev Environments:  
 - [ ] Unreal Engine  
   - [ ] Epic Games Installer    
   - [ ] Unreal Engine 5.x  
-  - [ ] Visual Studio Community or JetBrains Rider    
+  - [ ] Visual Studio Community or JetBrains Rider  
   - [ ] ...
 
 - [ ] Godot
