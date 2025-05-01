@@ -6,7 +6,7 @@ Omakwin configures Windows 11 to get out of your way without the need to write y
 # TODO
 ## OS Functions
 - [x] Check supported Windows version
-- [ ] Change wallpaper  
+- [x] Change wallpaper  
 - [x] Turn off sleep and screen lock (with revert)  
 - [ ] Navigate desktops via Keyboard (Alt+N)
 - [ ] Automatically hide taskbar
