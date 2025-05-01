@@ -34,8 +34,8 @@ Optional:
 - [x] Hugo
 
 ## Built-in:
-- [ ] Steam  
-- [ ] PowerToys
+- [x] Steam  
+- [x] PowerToys
 - [ ] WinJump
 
 Dev Environments:  

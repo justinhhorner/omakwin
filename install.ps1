@@ -18,18 +18,18 @@ if ($Debug) {
 # Exit immediately if a command exits with a non-zero status
 $ErrorActionPreference = "Stop"
 
-$OMAKWIN_INSTALL_PATH = "${env:LOCALAPPDATA}\omakwin\install"
+# Load paths to be used
+. $env:LOCALAPPDATA\omakwin\util\paths.ps1
 
 # Import OS functions
-. $env:LOCALAPPDATA\omakwin\os\sleep-lock-settings.ps1
-. $env:LOCALAPPDATA\omakwin\os\check-version.ps1
+. $OS_PATH\sleep-lock-settings.ps1
+. $OS_PATH\check-version.ps1
 
 if (IsSupportedOS) 
 {
     Write-Output "Time to make a few choices..."
-    . "${OMAKWIN_INSTALL_PATH}\terminal\app-gum.ps1"
-    . "${OMAKWIN_INSTALL_PATH}\optional-desktop-choices.ps1"
-
+    . $INSTALL_TERMINAL_PATH\app-gum.ps1
+    . $INSTALL_DESKTOP_PATH\optional-desktop-choices.ps1
 } 
 else 
 {
