@@ -30,13 +30,15 @@ Optional:
 - [x] Visual Studio Code
 - [x] Everything (by voidtools)
 - [ ] Visual Studio Community
+  - [ ] VsVim2022 Extension
+  - [ ] gruvboxvs Extension
 - [ ] JetBrains Rider
 - [x] Hugo
 
 ## Built-in:
 - [x] Steam  
 - [x] PowerToys
-- [ ] WinJump
+- [x] WinJump
 
 Dev Environments:  
 - [ ] Unreal Engine  
